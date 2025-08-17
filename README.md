@@ -4,7 +4,7 @@ Clone & Run Project
 - git clone https://github.com/namduongit/go-task.git && cd go-task
 - Build FE: cd client && npm install --force && cd -
 - Run FE: npm run dev
-- Run BE: ...........
+- Run BE: go run main.go
 ```
 
 ---
@@ -21,12 +21,16 @@ Clone & Run Project
 - `JWT`: JSON Web Token
 - URL: https://pkg.go.dev/github.com/golang-jwt/jwt/v5
 
+- `Godotenv`: Load Env
+- URL: https://pkg.go.dev/github.com/joho/godotenv
+
 ---
 ## Go-Task Project
-- `Struct`
+`Struct`
 ```
 client/     ->      FontEnd
 server/     ->      BackEnd
 docker/     ->      Docker
 .env        ->      Config Env
 ```
+
