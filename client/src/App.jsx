@@ -1,12 +1,38 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Router
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+// Layout
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+// Component
+
+// Page
+import Main from './pages/Main/Main'
+import Login from './pages/Login/Login'
+
+function App() {
   return (
     <>
-      <p>Vite app project</p>
+      <BrowserRouter>
+        <Header />
+
+        <div className="content-warp" style={{ minHeight: "100vh" }}>
+
+          <Routes>
+
+            {/* Router */}
+            <Route path='/' element={<Main />} />
+            <Route path='/auth/login' element={<Login />} />
+
+          </Routes>
+
+        </div>
+
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }
