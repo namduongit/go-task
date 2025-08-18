@@ -1,0 +1,76 @@
+/* Container */
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff, #e0f7ff);
+  padding: 2rem;
+}
+
+.register-container {
+  gap: 2rem;
+}
+
+.image-register {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.register-form {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.register-form-container {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-form__title {
+  color: #5d229d;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #5d229d;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #461a84;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .image-register {
+    display: none;
+  }
+
+  .register-form-container {
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none;
+}

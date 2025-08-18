@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 // Router
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Layout
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 // Component
 
 // Page
-import Main from './pages/Main/Main'
-import Login from './pages/Login/Login'
+import Main from './pages/Main/Main';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             {/* Router */}
             <Route path='/' element={<Main />} />
             <Route path='/auth/login' element={<Login />} />
+            <Route path='/auth/register' element={<Register />} />
 
           </Routes>
 

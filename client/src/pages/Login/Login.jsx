@@ -1,9 +1,12 @@
-import './Login.css'
+import './Login.css';
 
-import loginImage from '../../images/login.png'
-import { useState } from 'react'
+import loginImage from '../../images/login.png';
+import { useState } from 'react';
+
+import { useToast } from '../../service/ToastService';
 
 const Login = () => {
+    const { showToast } = useToast();
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -30,13 +33,16 @@ const Login = () => {
                             </div>
 
                             <div className='mb-5'>
-                                <input type="checkbox" class="form-check-input me-2" id="show-password" onChange={(event) => {
+                                <input type="checkbox" className="form-check-input me-2" id="show-password" onChange={(event) => {
                                     setShowPassword(event.target.checked);
                                 }} />
-                                <label class="form-check-label" for="show-password">Show password</label>
+                                <label className="form-check-label" htmlFor="show-password">Show password</label>
                             </div>
 
-                            <button type='submit' className='button submit-btn text-center rounded-5 w-100 fw-bold'>Login</button>
+                            <button type='button' className='button submit-btn text-center rounded-5 w-100 fw-bold' onClick={() => {
+                                console.log("Run here")
+                                showToast({ title: "namduongit", message: "Nam Duong", type: "info", duration: 3000 });
+                            }}>Login</button>
                         </form>
                     </div>
                 </div>

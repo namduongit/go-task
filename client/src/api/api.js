@@ -5,8 +5,21 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-    const token = localStorage.getItem("TOKEN");
-    if (token) config.headers.Authorization = `Bearer ${token}`;
+    const tokenString = localStorage.getItem("TOKEN");
+    if (!tokenString) return config;
+
+    const tokenData = JSON.parse(tokenString) || {};
+    const expiry = tokenData.expires_in || null;
+
+    if (!tokenData || !expiry) return config;
+    if (new Date() > new Date(expiry)) {
+        localStorage.clear();
+        window.location.href = "/";
+
+        return Promise.rejectd("Token expired");
+    }
+
+    config.headers.Authorization = `Bearer ${access_token}`;
     return config;
 });
 

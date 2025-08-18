@@ -1,7 +1,7 @@
 /* Container */
 .login-page {
   min-height: 100vh;
-  /* background-color: #f5f5f5; */
+  background: linear-gradient(135deg, #f0f4ff, #e0f7ff);
   padding: 2rem;
 }
 
